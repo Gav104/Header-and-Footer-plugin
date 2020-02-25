@@ -3,7 +3,7 @@
 Plugin Name: Very First Plugin
 Plugin URI: https://www.gavinohanlon.com/
 Description: This is the first attempt at a plugin.
-Version: 1.0
+Version: 2.0
 Author: Gavin O Hanlon
 */
 
