@@ -1,3 +1,15 @@
+<?php
+	if (!empty($_POST)) {
+		gh_vfp_save_form ($_POST);
+	}
+
+	$header = wp_unslash (get_option('gh_vfp_header_data'));
+	$footer = wp_unslash (get_option('gh_vfp_footer_data'));
+	echo $header;
+	echo $footer;
+
+?>
+
 <style>
 body {
   font-family: Arial;
@@ -40,16 +52,16 @@ div.container {
 <h3>Header Data</h3>
 <p>Here is where you enter the data that will go into the header and footer:</p>
 
-<div class="container">
-  <form action="/action_page.php">
+<div class="container" >
+  <form action="admin.php?page=very-first-plugin/includes/vfp-first-acp-page.php" method="post">
     <label>Header Data</label>
-    <input type="text" id="header_data" placeholder="<!-- This goes in the header -->">
+    <input value="<?php echo esc_attr ($header) ?>" type="text" name="gh_vfp_header_data" id="header_data" placeholder="<!-- This goes in the header -->">
 
     <label>Footer Data</label>
-    <input type="text" id="footer_data" placeholder="<!-- This goes in the footer -->">
+    <input value="<?php echo esc_attr ($footer) ?>" type="text" name="gh_vfp_footer_data" id="footer_data" placeholder="<!-- This goes in the footer -->">
   
     <input type="submit" value="Submit">
   </form>
-</div>
+</div>	
 
 </body>
