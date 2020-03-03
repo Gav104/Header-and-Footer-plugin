@@ -1,13 +1,13 @@
 <?php
-	if (!empty($_POST)) {
-		gh_vfp_save_form ($_POST);
+
+//if the user enters something on the form, post the data to the server. 
+	if ( !empty( $_POST )) {
+		gh_vfp_save_form ( $_POST );
 	}
 
-	$header = wp_unslash (get_option('gh_vfp_header_data'));
-	$footer = wp_unslash (get_option('gh_vfp_footer_data'));
-	echo $header;
-	echo $footer;
-
+//remove slashes to avoid data corruption before sending input data.
+	$header = wp_unslash (get_option( 'gh_vfp_header_data' ));
+	$footer = wp_unslash (get_option( 'gh_vfp_footer_data' ));
 ?>
 
 <style>
@@ -15,7 +15,7 @@ body {
   font-family: Arial;
 }
 
-input[type=text], select {
+input[ type=text ], select {
   width: 50%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -25,7 +25,7 @@ input[type=text], select {
   box-sizing: border-box;
 }
 
-input[type=submit] {
+input[ type=submit ] {
   width: 10%;
   background-color: #4CAF50;
   color: white;
@@ -36,7 +36,7 @@ input[type=submit] {
   cursor: pointer;
 }
 
-input[type=submit]:hover {
+input[ type=submit ]:hover {
   background-color: #45a049;
 }
 
@@ -54,6 +54,7 @@ div.container {
 
 <div class="container" >
   <form action="admin.php?page=very-first-plugin/includes/vfp-first-acp-page.php" method="post">
+
     <label>Header Data</label>
     <input value="<?php echo esc_attr ($header) ?>" type="text" name="gh_vfp_header_data" id="header_data" placeholder="<!-- This goes in the header -->">
 
