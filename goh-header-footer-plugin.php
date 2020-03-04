@@ -3,7 +3,7 @@
 Plugin Name: Header Footer Plugin
 Plugin URI: https://www.gavinohanlon.com/
 Description: This plugin inserts data into the header and footer area.
-Version: 3.2
+Version: 3.3
 Author: Gavin O Hanlon
 */
 

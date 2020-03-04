@@ -1,6 +1,6 @@
 <?php
 
-//if the user enters something on the form, post the data to the server. 
+//if the user enters something on the form, then post the data to the server. 
 	if ( !empty( $_POST )) {
 		goh_hfp_save_form ( $_POST );
 	}
